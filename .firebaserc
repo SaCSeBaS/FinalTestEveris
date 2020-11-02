@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "final-everis": {
+      "hosting": {
+        "finaleveris": [
+          "final-everis"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "final-everis"
+  }
+}

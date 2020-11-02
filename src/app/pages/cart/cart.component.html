@@ -1,0 +1,49 @@
+<div class="mat-app-background">
+  <app-header [events]="eventsSubject.asObservable()" (rfrCartPage)="log()"></app-header>
+  <div class="content">
+    <ng-container *ngIf="cartProducts">
+      <div class="content-container" *ngIf="cartProducts.length">
+        <ng-container *ngIf="total">
+          <div class="cart-items-container">
+            <div class="cart-items-header">Carrito de compras</div>
+            <div class="products-container">
+              <div class="product-item" *ngFor="let item of cartProducts">
+                <app-cart-item
+                  [cartItem]="item"
+                  [elementSource]="'page'"
+                  (refresh)="setupCart($event)"
+                  [uid]="User.uid"
+                ></app-cart-item>
+                <mat-divider></mat-divider>
+              </div>
+            </div>
+            <div class="subtotal">
+              <span>TOTAL</span>
+              <span class="total-m">{{ total | monetize }}</span>
+            </div>
+            <mat-divider></mat-divider>
+          </div>
+          <div class="payment-container">
+            <app-payment-stepper [subtotal]="total"></app-payment-stepper>
+          </div>
+        </ng-container>
+      </div>
+    
+      <div class="no-products-container" *ngIf="!cartProducts.length">
+        <img src="assets/images/shopping-cart.png" alt="cart-empty" />
+        Aún no agregas productos
+        <span class="attr">
+          Icons made by
+          <a
+            href="https://www.flaticon.com/free-icon/shopping-cart_833572"
+            title="Kiranshastry"
+            >Kiranshastry</a
+          >
+          from
+          <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+        </span>
+      </div>
+    </ng-container>
+  </div>
+  <app-footer></app-footer>
+</div>

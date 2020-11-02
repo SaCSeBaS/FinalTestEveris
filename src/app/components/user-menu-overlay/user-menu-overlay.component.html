@@ -1,0 +1,27 @@
+<div class="menu-dropdown">
+    <label for="dropdown" class="btn-dropdown">Mi cuenta</label>
+    <input
+        type="checkbox"
+        class="dropdown-open"
+        id="dropdown"
+        aria-hidden="true"
+        hidden
+    />
+    <label for="dropdown" class="dropdown-overlay"></label>
+    <div class="dropdown-inner">
+        <div class="menu-content">
+            <div class="menu-header">Hola, {{ user.name }}</div>
+            <div class="menu-item">
+                <img src="assets/svg/carbon_product.svg" /> <span>Mis pedidos</span>
+            </div>
+            <mat-divider></mat-divider>
+            <div class="menu-item">
+                <mat-icon>face</mat-icon> <span>Mi perfil</span>
+            </div>
+            <mat-divider></mat-divider>
+            <div class="menu-item" (click)="signOut()">
+                <mat-icon>power_settings_new</mat-icon> <span>Cerrar sesión</span>
+            </div>
+        </div>
+    </div>
+</div>

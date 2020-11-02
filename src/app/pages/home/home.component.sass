@@ -1,0 +1,126 @@
+h2
+    text-align: center
+    font-family: Barlow
+    font-style: normal
+    font-weight: 800
+    font-size: 20px
+    letter-spacing: 0.35em
+
+    color: rgba(0, 0, 0, 0.54)
+
+    margin-top: 3rem
+    margin-bottom: 3rem
+
+.products-container
+    margin-top: 32px
+    margin-left: 3.5rem
+
+    display: grid
+    grid-template-columns: repeat(5, 20%)
+
+    @media screen and ( max-width: 480px )
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        margin-left: 0px
+    @media screen and ( max-width: 768px )
+        grid-template-columns: repeat(2, 1fr)
+
+.categories
+    margin-top: 32px
+    display: flex
+    flex-direction: column
+    align-items: center
+
+    .catergorie1
+        background: url("/assets/images/categorie-1.png")
+        background-repeat: no-repeat
+        background-size: cover
+
+        width: 1181px
+        height: 360px
+
+        display: flex
+        justify-content: center
+
+        button
+            align-self: flex-end
+
+            margin-right: 6em
+            margin-bottom: 16px
+
+    .catergorie2
+        background: url("/assets/images/categorie-2.png")
+        background-repeat: no-repeat
+        background-size: cover
+
+        width: 1181px
+        height: 505px
+
+        display: flex
+        justify-content: flex-end
+
+        button
+            align-self: flex-end
+
+            margin-right: 16px
+            margin-bottom: 16px
+
+    .catergorie3
+        background: url("/assets/images/categorie-3.png")
+        background-repeat: no-repeat
+        background-size: cover
+
+        width: 1181px
+        height: 589px
+
+        display: flex
+        justify-content: flex-end
+
+        button
+            align-self: flex-end
+
+            margin-right: 16px
+            margin-bottom: 16px
+
+    & > div
+        margin-bottom: 32px
+
+        button
+            background-color: #6cE4CE
+
+.poster
+    display: flex
+    justify-content: center
+
+    video
+        cursor: pointer
+
+.mat-app-background
+    height: 100%
+    background-color: #ffffff
+
+    .content
+        width: auto
+        margin-top: 117px
+
+select 
+  background-color: transparent
+  border: .5 solid 
+  border-radius: 8px
+  cursor: pointer
+  padding: 0 1em 0 0
+  margin: 0
+  width: 16%
+  font-family: inherit
+  font-size: inherit
+  line-height: inherit
+  outline: none
+
+
+.select-group
+    display: flex
+    width: 100%
+    flex-direction: column
+    margin-left: 5.6rem

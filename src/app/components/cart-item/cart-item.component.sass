@@ -1,0 +1,132 @@
+.cart-item
+    display: flex
+    flex-direction: row
+
+    padding: 8px
+    padding-bottom: 2px
+
+    .product-image
+        img
+            width: 120px
+            height: 120px
+
+    .product-detail
+        display: grid
+        grid-template-columns: 135px
+        grid-template-rows: repeat(3, 1fr)
+
+        padding-right: 8px
+        padding-left: 8px
+
+        font-weight: normal
+
+        .product-name
+            font-size: 14px
+            line-height: 21px
+
+        .product-quantity
+            display: flex
+            flex-direction: row
+            align-self: center
+
+            font-size: 14px
+            line-height: 21px
+
+            span
+                padding-left: 16px
+                padding-right: 16px
+
+            button
+                background-color: #6cE4CE
+
+                width: 20px
+                height: 20px
+
+                ::ng-deep .mat-button-wrapper
+                    display: flex
+                    padding: 0px
+                    justify-content: center
+
+            .ng-fa-icon
+                margin-left: 12px
+                color: #F55549
+                cursor: pointer
+                font-size: 16px
+
+        .product-price
+            display: flex
+            flex-direction: row
+            align-self: end
+            justify-content: space-between
+            
+            font-weight: 300
+            font-size: 14px
+            line-height: 21px
+
+            padding-bottom: 6px
+
+            span
+                font-weight: 500
+
+    .product-detail-from-page
+        display: flex
+        flex-direction: column
+        width: 100%
+
+        padding-right: 8px
+        padding-left: 16px
+
+        font-weight: normal
+
+        .product-name
+            font-weight: 500
+            font-size: 16px
+            line-height: 24px
+
+        .product-quantity
+            display: flex
+            flex-direction: row
+            height: 65%
+            align-items: center
+            justify-content: space-between
+
+            font-size: 14px
+            line-height: 21px
+
+            span
+                padding-left: 16px
+                padding-right: 16px
+
+            button
+                background-color: #6cE4CE
+
+                width: 20px
+                height: 20px
+
+                ::ng-deep .mat-button-wrapper
+                    display: flex
+                    padding: 0px
+                    justify-content: center
+
+            .ng-fa-icon
+                color: #F55549
+                cursor: pointer
+                font-size: 16px
+
+            .product-price
+                display: flex
+                font-weight: 300
+                font-size: 14px
+                line-height: 21px
+
+                padding-bottom: 6px
+
+                span
+                    font-weight: 500  
+
+
+.product-img-container
+    width: 180px
+    height: 100px
+    img
+        height: 100%

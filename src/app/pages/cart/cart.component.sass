@@ -1,0 +1,73 @@
+.content-container
+    display: grid
+    grid-template-columns: 45% 55%
+
+    .cart-items-container
+        padding: 32px 12px 8px 32px
+        
+        .cart-items-header
+            padding-bottom: 32px
+            font-weight: 500
+            font-size: 20px
+            line-height: 30px
+
+        .products-container
+            max-height: 450px
+            overflow-x: auto
+
+        .subtotal
+            display: flex
+            justify-content: space-between
+            align-items: center
+
+            height: 55px
+            padding-left: 16px
+            padding-right: 16px
+
+            span
+                font-weight: 500
+                font-size: 14px
+                line-height: 21px
+            span.total-m
+                font-weight: bold
+
+    .payment-container
+        margin-top: 32px
+        margin-right: 16px
+        background-color: #DAF2EE
+
+        border-radius: 8px
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+
+.no-products-container
+    height: 550px
+    width: 100%
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    font-size: 14px
+    font-weight: 500
+    line-height: 21px
+    padding-top: 8px
+    padding-bottom: 8px
+    img
+        width: 180px
+        height: 180px
+        padding-top: 16px
+        padding-bottom: 16px
+    span.attr
+        font-size: 10px
+        display: flex
+        a
+            margin-left: 4px
+            margin-right: 4px
+            color: #4AD6C1
+
+.mat-app-background
+    height: 100%
+    background-color: #ffffff
+
+    .content
+        width: auto
+        margin-top: 117px

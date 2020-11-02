@@ -1,0 +1,15 @@
+<div class="product-container">
+    <div [ngStyle]="productStyle" class="product-img-container">
+    </div>
+    <div class="product-content">
+        <p>{{ product.name }}</p>
+        <span>{{ product.price | monetize }}</span>
+    </div>
+    <div class="product-actions">
+        <button mat-raised-button (click)="addToCart()">
+        <img src="assets/svg/add-shopping-cart.svg" />
+            Agregar al carrito
+        </button>
+    </div>
+    
+</div>

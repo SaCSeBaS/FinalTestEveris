@@ -1,0 +1,67 @@
+<div class="navbar-container">
+    <nav class="navbar">
+        <div class="navbar-left">
+            <ul class="nav-links">
+                <li class="link-item">
+                    <a [routerLink]="['/']" class="nav-link" routerLinkActive="active">
+                        Inicio
+                    </a>
+                </li>
+                <li class="link-item">
+                    <a  [routerLink]="['/']"
+                        class="nav-link"
+                    >
+                        Productos
+                    </a>
+                </li>
+                <li class="link-item">
+                    <a  
+                        class="nav-link"
+                        routerLinkActive="active"
+                    >
+                        Nosotros
+                    </a>
+                </li>
+                <li class="link-item">
+                    <a
+                        class="nav-link"
+                        routerLinkActive="active"
+                    >
+                        Contacto
+                    </a>
+                </li>
+                <li class="link-item">
+                    <app-categories-menu-overlay (cambiarCategoria)="cambiarProductos($event)" ></app-categories-menu-overlay>
+                </li>
+            </ul>
+        </div>
+        <div class="navbar-center">
+            <div class="logo-container" [routerLink]="['/']" >
+                <img src="assets/images/todotodo-logo.png" alt="logo" />
+            </div>
+        </div>
+        <div class="navbar-right">
+            <ul class="nav-actions">
+                <li class="action-item">
+                    <div class="search-icon">
+                        <fa-icon [icon]="['fas', 'search']" size="sm"> </fa-icon>
+                    </div>
+                </li>
+                <li class="action-item">
+                    <img src="assets/svg/shopping-cart.svg" *ngIf="!isAuth" />
+                    <app-cart-menu-overlay *ngIf="isAuth" (updateCartPage)="updatePage()" [user]="User" [events]="eventsSubject.asObservable()"></app-cart-menu-overlay>
+                </li>
+                <li class="action-item">
+                    <div
+                        class="my-account"
+                        *ngIf="!isAuth"
+                        [routerLink]="['/login']"
+                    >
+                        Mi cuenta
+                    </div>
+                    <app-user-menu-overlay (logout)="logout($event)" *ngIf="isAuth" [user]="User"></app-user-menu-overlay>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>

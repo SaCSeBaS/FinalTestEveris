@@ -1,0 +1,61 @@
+.footer-container
+    margin-top: 32px
+    padding-top: 32px
+    padding-bottom: 32px
+
+    left: 0px
+    right: 0px
+    bottom: 0
+
+    background: #fafac5
+
+    .footer-content
+        margin-left: 4em
+        margin-right: 4em
+
+        .info
+            display: grid
+            grid-template-columns: repeat(5, 20%)
+            gap: 1em
+
+            @media screen and ( max-width: 504px )
+                grid-template-columns: 100%
+
+            .info-item
+                ul 
+                    padding-left: 0px
+                    li
+                        list-style: none
+                        font-style: normal
+                        font-size: 14px
+                        font-weight: 300
+                        line-height: 21px
+
+                        padding-top: 4px
+                        padding-bottom: 4px
+
+                        h2
+                            font-size: 20px
+                            font-style: normal
+                            font-weight: 600
+                            line-height: 30px
+                            margin-top: 4px
+                            margin-bottom: 4px
+
+                        a
+                            text-decoration: none
+                            color: #000000
+                            cursor: pointer
+
+                            display: flex
+
+                            .ng-fa-icon
+                                margin-right: 4px
+
+        .mat-divider
+            margin-top: 32px
+        .copy
+            font-style: normal
+            font-weight: 300
+            font-size: 12px
+            line-height: 18px

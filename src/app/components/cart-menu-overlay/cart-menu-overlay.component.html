@@ -1,0 +1,46 @@
+<ng-container *ngIf="cart">
+    <div
+        class="menu-dropdown"
+        [matBadge]="cart.length"
+        matBadgeColor="warn"
+        matBadgeSize="small"
+        [matBadgeHidden]="!cart"
+    >
+        <label for="dropdown-cart" class="btn-dropdown">
+            <img src="assets/svg/shopping-cart.svg" />
+        </label>
+        <input
+            type="checkbox"
+            class="dropdown-open"
+            id="dropdown-cart"
+            aria-hidden="true"
+            hidden
+        />
+        <label for="dropdown-cart" class="dropdown-overlay"></label>
+        <div class="dropdown-inner">
+            <div class="menu-content">
+                <div class="menu-header">Carrito</div>
+                <div class="products-container" *ngIf="cart">
+                <div class="product-item" *ngFor="let item of cart">
+                    <app-cart-item
+                    [cartItem]="item"
+                    [uid]="user.uid"
+                    [elementSource]="'overlay'"
+                    (refresh)="setupCart()"
+                    ></app-cart-item>
+                    <mat-divider></mat-divider>
+                </div>
+                </div>
+                <div class="no-products" *ngIf="!cart">Aún no agregas productos</div>
+                <div class="subtotal" *ngIf="cart">
+                    <span>TOTAL</span>
+                    <span class="total-m">S./ {{ total.toFixed(2) }}</span>
+                </div>
+            </div>
+            <div class="menu-actions">
+                <button mat-raised-button (click)="goToCart()">Ir a mi carrito</button>
+            </div>
+        </div>
+    </div>
+</ng-container>
+  

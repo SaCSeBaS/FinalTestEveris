@@ -1,0 +1,116 @@
+.container
+    display: grid
+    grid-auto-columns: 100%
+    grid-template-rows: 195px 515px 230px
+
+    .logo-container
+        display: flex
+        justify-content: center
+        align-items: center
+
+        img
+            width: 120px
+            height: 120px
+
+    .form-container
+        display: flex
+        justify-content: center
+
+        form
+            width: 625px
+            height: 515px
+
+            border: 0.5px solid rgba(0, 0, 0, 0.24)
+            border-radius: 8px
+           
+            @media screen and ( max-width: 540px )
+                width: 315px
+                height: 530px
+
+            .form-title
+                display: flex
+                justify-content: center
+
+                margin-top: 16px
+
+                h2
+                    font-weight: normal
+                    font-size: 20px
+                    line-height: 36px
+
+                    @media screen and ( max-width: 540px )
+                        max-width: 280px
+                        text-align: center
+
+            .form-fields
+                display: flex
+                flex-direction: column
+                justify-content: center
+                align-items: center
+
+                margin-top: 16px
+               
+                .mat-form-field
+                    width: 382px
+
+                    @media screen and ( max-width: 540px )
+                        width: 250px
+
+                    .mat-icon
+                        color: rgba(0, 0, 0, 0.54)
+                        margin-right: 4px
+
+            .form-actions
+                display: flex
+                flex-direction: column
+                justify-content: center
+                align-items: center
+
+                button
+                    margin-top: 12px
+                    width: 382px
+                    color: #ffffff
+
+                    @media screen and ( max-width: 540px )
+                        width: 250px
+
+                button.email-login
+                    background: #6CE4CE
+                    color: #000000
+                button.google-login
+                    background: #F55549
+                button.facebook-login
+                    background: #4267B2
+
+                .ng-fa-icon
+                    margin-right: 8px
+
+                span
+                    margin-top: 32px
+                    font-size: 14px
+                    line-height: 21px
+
+                    a
+                        margin-left: 4px
+                        text-decoration: none
+                        color: #6CE4CE 
+                        font-weight: 500
+
+
+    .back-action-container
+        display: flex
+        justify-content: center
+
+        .wrapper
+            width: 625px
+
+            @media screen and ( max-width: 540px )
+                width: 315px
+
+            button
+                height: 36px
+
+                margin-top: 16px
+
+                @media screen and ( max-width: 540px )
+                    margin-top: 32px

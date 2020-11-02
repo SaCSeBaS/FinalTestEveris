@@ -1,0 +1,64 @@
+<div class="cart-item">
+    <div class="product-image">
+      <div [ngStyle]="productStyle" class="product-img-container">
+      </div>
+      <!--
+      <img
+        src="{{ cartItem.product.url }}"
+        alt="{{ cartItem.product.name }}"
+      />
+      -->
+    </div>
+    <div class="product-detail" *ngIf="elementSource === 'overlay'">
+      <div class="product-name">
+        {{ cartItem.product.name }}
+      </div>
+      <div class="product-quantity">
+        <button mat-mini-fab (click)="less()">
+          <img src="assets/svg/ant-design_minus-outlined.svg" alt="" />
+        </button>
+        <span>
+          {{ cartItem.quantity }}
+        </span>
+        <button mat-mini-fab (click)="plus()">
+          <img src="assets/svg/ant-design_plus-outlined.svg" alt="" />
+        </button>
+        <fa-icon
+          [icon]="['far', 'trash-alt']"
+          size="md"
+          (click)="remove()"
+        ></fa-icon>
+      </div>
+      <div class="product-price">
+        Precio
+        <span>{{ cartItem.product.price | monetize }}</span>
+      </div>
+    </div>
+    <div class="product-detail-from-page" *ngIf="elementSource === 'page'">
+      <div class="product-name">
+        {{ cartItem.product.name }}
+      </div>
+      <div class="product-quantity">
+        <div class="quantity-options">
+          <button mat-mini-fab (click)="less()">
+            <img src="assets/svg/ant-design_minus-outlined.svg" alt="" />
+          </button>
+          <span>
+            {{ cartItem.quantity }}
+          </span>
+          <button mat-mini-fab (click)="plus()">
+            <img src="assets/svg/ant-design_plus-outlined.svg" alt="" />
+          </button>
+        </div>
+        <div class="product-price">
+          Precio
+          <span>{{ cartItem.product.price | monetize }}</span>
+        </div>
+        <fa-icon
+          [icon]="['far', 'trash-alt']"
+          size="md"
+          (click)="remove()"
+        ></fa-icon>
+      </div>
+    </div>
+  </div>  

@@ -1,0 +1,24 @@
+<div class="menu-dropdown">
+    <label for="dropdown-categories" class="btn-dropdown">Categorias</label>
+    <input
+        type="checkbox"
+        class="dropdown-open"
+        id="dropdown-categories"
+        aria-hidden="true"
+        hidden
+    />
+    <label for="dropdown-categories" class="dropdown-overlay"></label>
+    <div class="dropdown-inner">
+        <div class="menu-content">
+            <div class="menu-item" (click)="selectCategory('0')">
+                Todo Todo
+            </div>
+            <ng-container *ngFor="let category of categories$ | async">
+                <div class="menu-item" (click)="selectCategory(category.uid)">
+                    {{ category.category_name }}
+                </div>
+                <mat-divider></mat-divider>
+            </ng-container>
+        </div>
+    </div>
+</div>

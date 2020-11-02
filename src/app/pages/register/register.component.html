@@ -1,0 +1,101 @@
+<div class="container">
+    <div class="logo-container">
+        <img src="assets/images/todotodo-logo.png" alt="logo" />
+    </div>
+    <div class="form-container">
+        <form [formGroup]="form">
+            <div class="form-title">
+                <h2>Únete y encuentra tus productos favoritos</h2>
+            </div>
+            <div class="form-fields">
+                <mat-form-field appearance="outline" fontLabel="always">
+                    <mat-label>Ingrese su nombre</mat-label>
+                    <input
+                        matInput
+                        placeholder="Nombre"
+                        formControlName="name"
+                        [ngClass]="{ 'is-invalid': submitted && f.name.errors }"
+                    />
+                    <mat-error *ngIf="f.name.errors && f.name.errors.required"
+                        >Por favor ingrese su nombre</mat-error
+                    >
+                </mat-form-field>
+                <mat-form-field appearance="outline" fontLabel="always">
+                    <mat-label>Ingrese sus apellidos</mat-label>
+                    <input
+                        matInput
+                        placeholder="Apellidos"
+                        formControlName="lastname"
+                        [ngClass]="{ 'is-invalid': submitted && f.lastname.errors }"
+                    />
+                    <mat-error *ngIf="f.lastname.errors && f.lastname.errors.required"
+                        >Por favor ingrese sus apellidos</mat-error
+                    >
+                </mat-form-field>
+                <mat-form-field appearance="outline" fontLabel="always">
+                <mat-label>Ingrese su email</mat-label>
+                    <mat-icon matPrefix>mail_outline</mat-icon>
+                    <input
+                        matInput
+                        placeholder="Email"
+                        formControlName="email"
+                        [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+                    />
+                    <mat-error *ngIf="f.email.errors && f.email.errors.required">
+                        Por favor ingrese su email
+                    </mat-error>
+                    <mat-error *ngIf="f.email.errors && f.email.errors.email">
+                        Debe ser una dirección de correo electrónico
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" fontLabel="always">
+                    <mat-label>Ingrese su contraseña</mat-label>
+                    <mat-icon matPrefix>lock_outline</mat-icon>
+                    <input
+                        matInput
+                        [type]="!hide ? 'password' : 'text'"
+                        placeholder="Contraseña"
+                        formControlName="password"
+                        [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+                    />
+                    <mat-hint>Debe contener mínimo 6 caracteres</mat-hint>
+                    <mat-error *ngIf="f.password.errors && f.password.errors.required">
+                        Por favor ingrese su contraseña
+                    </mat-error>
+                    <a
+                        mat-icon-button
+                        matSuffix
+                        (click)="hide = !hide"
+                        [attr.aria-label]="'Ocultar contraseña'"
+                        [attr.aria-pressed]="hide"
+                    >
+                    <mat-icon matSuffix>{{
+                    !hide ? "visibility_off" : "visibility"
+                    }}</mat-icon>
+                    </a>
+                </mat-form-field>
+            </div>
+            <div class="form-actions">
+                <button mat-raised-button class="email-login" (click)="signUp(form)">
+                    <div class="label">
+                        Regístrate y empieza a comprar
+                    </div>
+                </button>
+                <span class="no-account">
+                    ¿Ya tienes una cuenta?
+                    <a [routerLink]="['/auth/login']">
+                        Inicia sesión
+                    </a>
+                </span>
+            </div>
+        </form>
+    </div>
+    <div class="back-action-container">
+        <div class="wrapper">
+            <button mat-flat-button (click)="backToHome()">
+                <mat-icon>arrow_back</mat-icon>
+                Volver al inicio
+            </button>
+        </div>
+    </div>
+</div>  

@@ -1,0 +1,53 @@
+<div class="mat-app-background">
+  <app-header [events]="eventsSubject.asObservable()" (actualizarProductosCategoria)="actualizarProductos($event)"></app-header>
+  <div class="content">
+    <h2 style="margin-top: 10rem;">PRODUCTOS DESTACADOS</h2>
+
+    <div class="select-group">
+      <label for="standard-select">Ordenador por precio:</label>
+      <div class="select">
+        <select id="standard-select" (change)="reorder(select.value)" #select>
+          <option value="-1" selected>Selecciona un orden</option>
+          <option value="0">Mayor a menor</option>
+          <option value="1">Menor a mayor</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="products-container">
+        <app-product-item-generic (cartUpdated)='emitEventToChild($event)'
+          *ngFor="let product of collection"
+          [product]="product"
+        ></app-product-item-generic>
+      </div>
+    </div>
+
+    <h2>TE PUEDE INTERESAR</h2>
+
+    <div class="categories">
+      <div class="catergorie1">
+        <button mat-fab>
+          <mat-icon>keyboard_arrow_right</mat-icon>
+        </button>
+      </div>
+      <div class="catergorie2">
+        <button mat-fab>
+          <mat-icon>keyboard_arrow_right</mat-icon>
+        </button>
+      </div>
+      <div class="catergorie3">
+        <button mat-fab>
+          <mat-icon>keyboard_arrow_right</mat-icon>
+        </button>
+      </div>
+    </div>
+
+    <div class="poster">
+      <video autoplay loop>
+        <source src="assets/videos/poster 2.mp4" type="video/mp4" />
+      </video>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>
